@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:giffinder/ui/gif_page.dart';
 import 'package:http/http.dart' as http;
+import 'package:share/share.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -74,6 +75,7 @@ class _HomePageState extends State<HomePage> {
                     return Container(
                       width: 200.0,
                       height: 200.0,
+                      alignment: Alignment.center,
                       child: CircularProgressIndicator(
                         valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
                         strokeWidth: 5.0,
@@ -119,6 +121,9 @@ class _HomePageState extends State<HomePage> {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => GifPage(snapshot.data["data"][index])
               ));
+            },
+            onLongPress: (){
+              Share.share(snapshot.data["data"][index]["images"]["fixed_height"]["url"]);
             },
           );
         else

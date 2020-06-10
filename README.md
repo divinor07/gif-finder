@@ -4,7 +4,7 @@ A new Flutter application.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+GIF search application through the GIPHY API that shows the GIFs of the moment and also allows a search for keywords.
 
 A few resources to get you started if this is your first Flutter project:
 
